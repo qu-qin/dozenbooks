@@ -1,0 +1,73 @@
+.btn {
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 12px 22px;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border: none;
+	background-image: none;
+	background-color: transparent;
+	white-space: nowrap;
+	cursor: pointer;
+	outline: none;
+	.border-radius(2px);
+	.user-select(none);
+	.box-shadow(0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24));
+	.transition(background-color 0.3s ease, box-shadow 0.3s ease);
+
+	&:hover, &:focus {
+		text-decoration: none;
+		.box-shadow(0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28));
+	}
+
+	&:active, &.active {
+		outline: 0;
+		background-image: none;
+		.box-shadow(0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28));
+	}
+
+	&.disabled, &[disabled], fieldset[disabled] & {
+		cursor: not-allowed;
+		pointer-events: none;
+		.opacity(.45);
+	}
+
+}
+
+.btn-primary {
+	.button-variant(@color-btn-primary, @color-btn-primary-hover, @color-btn-primary-active);
+}
+
+.button-variant(@color, @hover-color, @press-color) {
+
+	background-color: @color;
+	color: #fff;
+
+	&:hover, &:focus {
+		background-color: @hover-color;
+	}
+
+	&:active {
+		background-color: @press-color;
+	}
+
+	&.holo {
+
+		border: 1px solid @color;
+		background-color: transparent;
+		color: @color;
+
+		&:hover, &:focus {
+			background-color: @color;
+			color: #fff;
+		}
+
+		&:active {
+			background-color: @press-color;
+			color: #fff;
+		}
+
+	}
+
+}

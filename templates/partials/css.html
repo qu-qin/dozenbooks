@@ -1,0 +1,5 @@
+{% if is_dev_mode %}
+	{% include "partials/resources/src/css.html" %}
+{% else %}
+	{% include "partials/resources/dist/css.html" %}
+{% endif %}

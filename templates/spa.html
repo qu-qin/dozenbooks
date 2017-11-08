@@ -1,0 +1,16 @@
+{%- extends "base.html" %}
+
+{%- block body %}
+
+	{% include "home/index.html" %}
+	{% include "providerselector/index.html" %}
+
+	<div id="spinner">{% include "partials/spinner.html" %}</div>
+
+{%- endblock %}
+
+{%- block bootstrap %}
+
+	{% include "partials/bootstrap.html" %}
+
+{%- endblock %}

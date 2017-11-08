@@ -1,0 +1,3 @@
+queue:
+- name: fetch-and-email-queue
+  rate: 10/s

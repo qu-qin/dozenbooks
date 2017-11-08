@@ -1,0 +1,15 @@
+<div id="providerSelector" class="page">
+	<div class="provider-container wrapper popup paper-shadow z3">
+		<h1>Click to log in...</h1>
+		<ul class="providers"></ul>
+	</div>
+
+	<script type="text/template" id="providerSelectorTemplate">
+		<% _.each(providers, function(provider){ %>
+			<li class="provider" data-name="<%- provider.name %>">
+				<span class="icon <%- provider.icon %>"></span>
+				<span class="name"><%- provider.name %></span>
+			</li>
+		<% }); %>
+	</script>
+</div>

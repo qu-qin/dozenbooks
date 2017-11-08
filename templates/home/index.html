@@ -1,0 +1,67 @@
+<div id="home" class="page">
+
+	<div class="search-container pure-g">
+
+		<div class="search-form pure-u-1 pure-u-md-2-3">
+			<input type="text" id="searchField" class="search-field" placeholder="Search..." autocomplete="off"/>
+			<span class="icon-search fab"></span>
+			<span class="icon-search addon"></span>
+		</div>
+
+	</div>
+
+	<div id="searchError" class="result-container pure-u-1 pure-u-md-2-3">
+		<h1>SERVER ERROR</h1>
+		<div class="option">Refresh the page and try again later</div>
+		<div class="option or">or</div>
+		<div class="option">
+			Click the button below to reset
+			<button id="resetAuth" class="btn btn-primary">RESET</button>
+		</div>
+	</div>
+
+	<div id="searchResults" class="result-container pure-u-1 pure-u-md-2-3 paper-shadow z1"></div>
+
+	<div id="paging">
+		<button id="nextPage" class="btn btn-primary">LOAD MORE</button>
+	</div>
+
+	<div id="searchSpinner">{% include "partials/spinner.html" %}</div>
+
+	<div id="userPopup" class="mfp-popup-light mfp-with-anim mfp-hide paper-shadow z3">
+		<input type="text" class="user-email" placeholder="Enter your Kindle email address" />
+		<button type="button" id="confirmUserEmail" class="btn btn-primary btn-lg">SEND</button>
+	</div>
+
+	<script type="text/template" id="searchResultsTemplate">
+		<% _.each(results, function(result){ %>
+			<div class="result pure-g">
+				<% if (result.type.toLowerCase() === "mobi") { %>
+					<div class="type pure-u-1-6"><span class="badge success"><%- result.type %></span></div>
+				<% } else if (result.type.toLowerCase() === "epub") { %>
+					<div class="type pure-u-1-6"><span class="badge warning"><%- result.type %></span></div>
+				<% } else { %>
+					<div class="type pure-u-1-6"><span class="badge info"><%- result.type %></span></div>
+				<% } %>
+				<div class="name pure-u-1-2"><%- result.name %></div>
+				<div class="size pure-u-1-6"><%- result.size %></div>
+				<div class="action pure-u-1-6">
+					<span class="icon-send"></span>
+					<span class="icon-tick"></span>
+				</div>
+				<input type="hidden" value="<%- result.links %>" class="links" />
+			</div>
+		<% }); %>
+	</script>
+
+	<script type="text/template" id="sendingSpinner">
+		<div class="spinner sk-spinner sk-spinner-wave">
+			<div class="sk-rect1"></div>
+			<div class="sk-rect2"></div>
+			<div class="sk-rect3"></div>
+			<div class="sk-rect4"></div>
+			<div class="sk-rect5"></div>
+		</div>
+	</script>
+
+</div>

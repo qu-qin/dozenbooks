@@ -1,0 +1,47 @@
+#providerSelector {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+
+	.provider-container {
+		max-width: 300px;
+		max-height: 210px;
+	}
+
+	.providers {
+		margin: 40px 0;
+	}
+
+	.provider {
+
+		height: 50px;
+		line-height: 48px;
+		border: 1px solid @coral;
+		text-align: center;
+		cursor: pointer;
+		color: darken(@coral, 7%);
+		.border-radius(999em);
+		.transition(color 0.2s ease-in-out, background-color 0.2s ease-in-out);
+
+		&:hover {
+			background-color: #E84A5F;
+			color: #FECEA8;
+			border: 0.4px solid #FECEA8;
+		}
+
+		.icon, .name {
+			display: inline-block;
+			font-size: 18px;
+		}
+
+		.icon-weibo {
+			margin-right: 10px;
+			font-size: 24px;
+		}
+	}
+
+}

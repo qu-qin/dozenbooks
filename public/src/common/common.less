@@ -1,0 +1,75 @@
+// override pure css
+
+html, button, input, select, textarea, .pure-g [class*="pure-u"] {
+	font-family: "Lato", "Helvetica Neue",Helvetica,Arial,"Microsoft YaHei","微软雅黑",sans-serif;
+}
+
+body {
+	font-family: "Lato", "Helvetica Neue",Helvetica,Arial,"Microsoft YaHei","微软雅黑",sans-serif;
+	font-weight: 300;
+	color: @color-text;
+	background-color: @color-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.page {
+	z-index: -1;
+	.opacity(0);
+	.transition(opacity 0.3s ease-in-out, z-index 0.3s ease-in-out);
+
+	&.active {
+		z-index: 5;
+		.opacity(1);
+	}
+}
+
+.wrapper {
+	position: relative;
+	max-width: 1203px;
+	min-width: 310px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 42px;
+	.box-sizing(border-box);
+}
+
+.paper-shadow {
+
+	&.z1 {
+		.box-shadow(0 2px 5px 0 rgba(0, 0, 0, 0.26));
+	}
+
+	&.z2 {
+		.box-shadow(0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2));
+	}
+
+	&.z3 {
+		.box-shadow(0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19));
+	}
+
+}
+
+@media only screen and (max-width: 985px) {
+	.wrapper {
+		padding: 0 20px;
+	}
+}
+
+@media only screen and (max-width: 568px) {
+	.wrapper {
+		padding: 0 15px;
+	}
+}

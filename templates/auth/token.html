@@ -1,0 +1,43 @@
+{%- extends "base.html" %}
+
+{%- block body %}
+
+	<input type="hidden" id="provider" value="{{ token.provider }}"/>
+	<input type="hidden" id="authToken" value="{{ token.token }}"/>
+	<input type="hidden" id="expiry" value="{{ token.expiry }}"/>
+	<input type="hidden" id="refreshToken" value="{{ token.refresh_token }}"/>
+
+{%- endblock %}
+
+{%- block bootstrap %}
+
+	<script>
+		$(function() {
+
+			var providerName = $("#provider").val().toLowerCase();
+			var authToken = $("#authToken").val();
+			var expiry = parseInt($("#expiry").val(), 10);
+			var refreshToken = $("#refreshToken").val();
+			var now = Date.now();
+
+			if (_.isEmpty(authToken) || expiry <= now) {
+				window.location.href = "/";
+				return;
+			}
+
+			var provider = _.find(beambook.utils.OAuthProviders.PROVIDERS, function(authProvider) {
+				return providerName === authProvider.name.toLowerCase();
+			});
+
+			if (!provider) {
+				window.location.href = "/";
+				return;
+			}
+
+			beambook.utils.OAuthProviders.saveOAuthToken(provider, authToken, expiry, refreshToken);
+			window.location.href = "/";
+
+		});
+	</script>
+
+{%- endblock %}
