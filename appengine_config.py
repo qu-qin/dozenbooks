@@ -15,14 +15,14 @@ APP_CONFIG = {
             "AUTHORIZE_URL": "https://auth.sina.com.cn/oauth2/authorize",
             "ACCESS_TOKEN_URL": "https://auth.sina.com.cn/oauth2/access_token",
             "APP_KEY": "****************",
-            "APP_SECRET": "*************************8"
+            "APP_SECRET": "*************************"
         }
 
     },
 
     "EMAIL": {
-        "SENDER": "beambook.kindle@gmail.com",
-        "BCC": "dcenrie@gmail.com"
+        "SENDER": "*************@****.com",
+        "BCC": "**************@****com"
     },
 
     "PAGE_SIZE": "30",
