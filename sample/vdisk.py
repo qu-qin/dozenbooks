@@ -6,7 +6,7 @@ from google.appengine.api import taskqueue
 
 def test(token_response):
 
-    access_token = "7fc3146662b8C1H3PLEuh4b87uL14276"
+    access_token = "*****************************"
 
     (queries, types) = client.build_search_query([
         {"steve": client.SearchType.NAME},
