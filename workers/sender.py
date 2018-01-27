@@ -35,6 +35,7 @@ class SenderTask(BaseHandler):
         email = job_request["email"]
 
         file_name = job_request["file"]
+        file_name = file_name.encode("utf-8")
 
         # somehow when send email on dev env, we need to encode the file name first
         # prod env seems doing this automatically
